@@ -1,0 +1,110 @@
+GEA-H ENTERPRISE 2026 - ZIP COMPLET DE TRAVAIL
+
+Liens :
+- Site : https://www.gea-holding.net/ ou /index.php
+- Admin : https://www.gea-holding.net/admin/login.php
+
+Admin :
+Email : admin@gea-holding.net
+Mot de passe : GEA-Admin-2026
+
+Inclus :
+- Mode pré-lancement / public / maintenance
+- Mode clair / sombre
+- Immobilier
+- Résidences meublées
+- Hôtels
+- Vente aux enchères
+- GEA-H TV
+- GEA-H Bank sans Bitcoin/crypto
+- Prospects + import
+- Campagnes SMS / Email / WhatsApp
+- API Manager : OpenAI, Gemini, OpenRouter, Brevo, Twilio, Infobip, Mapbox, Cloudinary, CinetPay, Meta, YouTube, LinkedIn, TikTok, image et vidéo
+- Assistant IA fonctionnel avec clé OpenAI/Gemini/OpenRouter
+- Images/Vidéos publicitaires préparées
+- Documents clients
+- Agents et missions
+- Journal d’activité
+
+Important :
+Les fonctions liées aux services externes deviennent réelles quand les clés API valides sont ajoutées et que le serveur autorise cURL.
+
+
+AJOUT COMPTES RÉSEAUX SOCIAUX + IA PUBLICITÉ :
+- Admin : /admin/social-accounts.php
+- Admin : /admin/ai-ads.php
+- Connexion des comptes/pages via token/API.
+- Préparation de publications pour GEA-H TV, Facebook, Instagram, YouTube, LinkedIn, TikTok.
+- Génération de texte publicitaire par l’assistant IA.
+- Validation admin avant publication.
+
+
+CORRECTION FINALE API MANAGER :
+- Tous les champs de clés API sont visibles.
+- Chaque section a un bouton Sauvegarder.
+- Chaque API a un bouton Tester.
+- Modèles IA automatiques.
+- Réseaux sociaux, images, vidéos, paiements, SMS, email, WhatsApp inclus.
+
+--------------------------------------------------------
+NOUVEAU : LOTISSEMENT IA (Admin > Lotissement IA)
+--------------------------------------------------------
+- "Analyser un terrain avec l'IA" : téléverse une IMAGE (photo, vue
+  satellite ou plan). Nécessite une clé OpenAI (gpt-4o) ou Gemini
+  (gemini-1.5) branchée dans API Manager (le modèle doit lire les images).
+- "Générateur de plan conceptuel" : dessine un découpage en lots + voiries
+  et liste des coins de bornes INDICATIFS (mètres, + GPS approximatif si
+  point de référence fourni).
+- IMPORTANT : outil d'aide à la conception uniquement. Le bornage réel et
+  les coordonnées GPS définitives exigent un levé topographique
+  (GPS RTK / station totale), un traitement AutoCAD + Covadis (ou KAJO)
+  et la validation d'un GÉOMÈTRE-EXPERT AGRÉÉ.
+- Le dossier "uploads/" doit être accessible en écriture (pour les images).
+
+--------------------------------------------------------
+NOUVEAU : TERRAIN VISION 3D (Admin > Terrain Vision 3D)
+--------------------------------------------------------
+- Génère une vue 3D interactive du morcellement (par dimensions de lot
+  OU par nombre de parcelles) : parcelles, voiries, numéros, bornes.
+- Glisser = tourner, molette/pincer = zoomer.
+- Nécessite une connexion internet (librairie 3D Three.js chargée via CDN).
+- Visualisation CONCEPTUELLE non géoréférencée. Relief réel = levé
+  topographique ; bornage légal = géomètre-expert agréé.
+
+
+AJOUT ESSENTIEL PHOTOS / VIDÉOS :
+- Admin : /admin/media-manager.php
+- Ajout photos, vidéos, PDF, visites 360, liens GEA-H TV.
+- Association par module : biens, résidences, hôtels, enchères, GEA-H TV.
+- Stockage local dans /uploads/media.
+- Les tableaux admin affichent l’ID utile pour lier les médias.
+- Rien n’a été supprimé.
+
+
+AJOUT REÇUS & RÉFÉRENCES :
+- Admin : /admin/receipts.php
+- Vue reçu : /admin/receipt-view.php?ref=REFERENCE
+- Vérification client : /modules/verify-receipt.php?ref=REFERENCE
+- Reçu pour paiement, souscription, réservation, cotisation, tontine, transfert.
+- Référence unique automatique : GEAH-TYPE-AAAAMMJJ-XXXXXX.
+- Impression / PDF via navigateur.
+
+
+CORRECTION ASSISTANT IA :
+- api_config fusionne maintenant les valeurs par défaut et les clés enregistrées.
+- Assistant affiche les clés présentes/absentes.
+- Assistant affiche l’erreur exacte OpenAI/Gemini/OpenRouter si la réponse échoue.
+- Compatible OpenAI, Gemini, OpenRouter avec modèles automatiques.
+
+
+AJOUT GEA-H STUDIO IA :
+- Admin : /admin/geah-studio.php
+- Public : /modules/geah-studio.php
+- Conception : maisons, villas, résidences, immeubles, hôtels, lotissements, villes modernes, quartiers intelligents, plans 2D/3D.
+- Génération de concept via l’assistant IA si OpenAI/Gemini/OpenRouter est connecté.
+- Upload fichiers : images, vidéos, PDF, ZIP, fichiers 3D .obj/.glb/.gltf selon serveur.
+- Stockage : /uploads/studio.
+- Rien n’a été supprimé.
+
+
+CORRECTION GEA-H TV VIDÉO : upload vidéo local MP4/WebM/MOV/OGG, lecteur intégré sur /modules/geah-tv.php, YouTube intégré en iframe, stockage /uploads/tv.
