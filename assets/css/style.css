@@ -1,0 +1,1128 @@
+*{box-sizing:border-box}body{margin:0;font-family:Arial,system-ui,sans-serif;background:var(--bg,#07111b);color:var(--text,#edf5f0)}:root{--bg:#07111b;--surface:#0c1a27;--surface2:#08131f;--text:#edf5f0;--muted:#cbd5e1;--border:#233142;--gold:#d4a23a;--blue:#0d6efd}body.light-mode{--bg:#f4f7fb;--surface:#fff;--surface2:#f8fafc;--text:#111827;--muted:#475569;--border:#dbe3ea;--gold:#b8860b}a{text-decoration:none;color:inherit}.wrap{width:min(1180px,94%);margin:auto}.btn{border:0;border-radius:12px;padding:11px 15px;font-weight:800;cursor:pointer;display:inline-block}.btn-primary{background:var(--blue);color:#fff}.btn-gold{background:var(--gold);color:#211400}.btn-light{background:#152536;color:#fff;border:1px solid var(--border)}body.light-mode .btn-light{background:#e9eef5;color:#111}.danger{background:#7f1d1d;color:#fff}.header{background:#050d12;border-bottom:1px solid var(--border)}body.light-mode .header,body.light-mode .sidebar{background:#fff;color:#111}.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:22px;font-weight:900;color:var(--gold)}.menu{display:flex;gap:15px}.menu a{font-weight:700}.hero{padding:70px 0;background:linear-gradient(150deg,#04110c,#062e22 60%,#050d12)}body.light-mode .hero{background:linear-gradient(150deg,#fff,#eef6f1 60%,#f4f7fb);color:#111}.hero h1{font-size:clamp(38px,6vw,68px);line-height:1;margin:10px 0}.hero p{color:var(--muted);font-size:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.card,.kpi,.pre-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:18px;margin-bottom:16px;color:var(--text)}.section{padding:45px 0}.prelaunch{min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 20% 20%,rgba(212,162,58,.25),transparent 32%),linear-gradient(150deg,#03080c,#071722 45%,#061b14);padding:25px}body.light-mode .prelaunch{background:linear-gradient(150deg,#fff,#eef6f1 60%,#f4f7fb)}.pre-card{text-align:center;width:min(920px,100%);background:rgba(255,255,255,.07)}.pre-card h1{font-size:clamp(42px,7vw,84px);margin:10px 0}.pre-card h2{color:var(--gold)}.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:20px 0}.chips span{border:1px solid var(--border);background:rgba(255,255,255,.08);border-radius:999px;padding:9px 12px;font-weight:800}.login{min-height:100vh;display:grid;place-items:center;background:#111827}.login-card{background:#fff;color:#111;padding:35px;border-radius:18px;width:min(420px,92%)}input,select,textarea{width:100%;padding:11px;border:1px solid var(--border);border-radius:10px;background:var(--surface2);color:var(--text);margin:6px 0 12px}.login-card input{background:#fff;color:#111;border:1px solid #ddd}.admin-layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh}.sidebar{background:linear-gradient(180deg,#06231b,#03100b);padding:14px 12px;border-right:1px solid var(--border);position:sticky;top:0;height:100vh;overflow:auto}.sidebar::-webkit-scrollbar{width:7px}.sidebar::-webkit-scrollbar-thumb{background:#1c3a2e;border-radius:4px}.sidebar h2{color:var(--gold);font-size:18px;margin:6px 8px 8px;letter-spacing:.4px}.sidebar a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;margin-bottom:2px;color:#dbe7e0;font-weight:600;font-size:14px;line-height:1.2;transition:background .15s,color .15s}.sidebar a .ic{width:20px;text-align:center;font-size:15px;flex-shrink:0}.sidebar a.active{background:rgba(212,162,58,.22);color:#fff}.sidebar a:hover{background:rgba(212,162,58,.14);color:#fff}body.light-mode .sidebar a:hover{background:#e9eef5}.admin-main{padding:24px 30px;max-width:100%;min-width:0}.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.kpi b{font-size:28px;color:var(--gold)}.table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:16px;overflow:hidden}.table th,.table td{border-bottom:1px solid var(--border);padding:10px;text-align:left}.status{padding:5px 9px;border-radius:999px;font-weight:800;font-size:12px}.ok{background:#064e3b;color:#a7f3d0}.warn{background:#78350f;color:#fde68a}.bad{background:#7f1d1d;color:#fecaca}.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.full{grid-column:1/-1}.error{background:#fee2e2;color:#991b1b;padding:10px;border-radius:8px}.theme-toggle{position:fixed;right:18px;bottom:18px;z-index:999;border:1px solid var(--border);border-radius:999px;padding:12px 16px;background:var(--surface);color:var(--text);font-weight:900;cursor:pointer;box-shadow:0 12px 35px rgba(0,0,0,.25)}@media(max-width:850px){.admin-layout{grid-template-columns:1fr}.sidebar{height:auto;position:static}.menu{display:none}}
+/* ===================== LOTISSEMENT IA ===================== */
+.lot-warn{background:#fff3cd;border:1px solid #ffe08a;color:#7a5b00;border-radius:12px;padding:14px 16px;margin:10px 0;line-height:1.5}
+.lot-warn b{color:#664d00}
+.lot-ai{white-space:pre-wrap;line-height:1.6;background:#f8faf9;border-radius:12px;padding:16px;border:1px solid #e6ebe8}
+.lot-grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lot-svg{width:100%;background:#fff;border:1px solid #e6ebe8;border-radius:12px;margin-top:10px}
+.lot-table{font-size:13px}
+.lot-sum{display:flex;gap:18px;flex-wrap:wrap;margin:8px 0}
+.lot-sum div{background:#f1f5f3;border-radius:10px;padding:10px 14px}
+.lot-sum b{color:#013328;font-size:18px;display:block}
+@media(max-width:760px){.lot-grid2{grid-template-columns:1fr}}
+
+/* ===================== GUIDAGE TERRAIN GPS ===================== */
+.g-box{background:#013328;color:#fff;border-radius:16px;padding:22px;text-align:center;margin-top:12px}
+.g-target{font-size:15px;opacity:.85;margin-bottom:4px}
+.g-dist{font-size:46px;font-weight:900;line-height:1.1;color:#d4a23a}
+.g-dir{font-size:18px;margin-top:6px}
+.g-acc{font-size:13px;opacity:.7;margin-top:10px}
+.g-ok{background:#15a34a;border-radius:10px;padding:10px;margin-top:12px;font-weight:800}
+.g-nav{display:flex;gap:10px;justify-content:center;margin-top:14px}
+.g-warnacc{color:#ffb84d;font-weight:700;font-size:13px;margin-top:8px}
+.g-box .g-acc{transition:color .3s}
+
+
+/* GEAH MEDIA MANAGER */
+.media-thumb{
+  width:120px;
+  height:80px;
+  object-fit:cover;
+  border-radius:10px;
+  border:1px solid var(--border,#233142);
+  background:#111827;
+}
+.media-preview{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.media-badge{
+  display:inline-flex;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#152536;
+  color:#fff;
+  font-weight:800;
+  font-size:12px;
+}
+body.light-mode .media-badge{background:#e9eef5;color:#111827}
+
+
+/* GEAH RECEIPTS */
+.receipt-box{
+  max-width:850px;
+  margin:20px auto;
+  background:var(--surface,#0c1a27);
+  border:1px solid var(--border,#233142);
+  border-radius:18px;
+  padding:28px;
+}
+.receipt-header{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  border-bottom:2px solid var(--gold,#d4a23a);
+  padding-bottom:16px;
+  margin-bottom:18px;
+}
+.receipt-ref{
+  font-size:20px;
+  font-weight:900;
+  color:var(--gold,#d4a23a);
+}
+.receipt-line{
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px dashed var(--border,#233142);
+  padding:10px 0;
+}
+@media print{
+  .sidebar,.theme-toggle,.no-print,.btn{display:none!important}
+  body{background:white!important;color:black!important}
+  .admin-layout{display:block!important}
+  .admin-main{padding:0!important}
+  .receipt-box{border:1px solid #333!important;color:black!important;background:white!important}
+}
+
+/* GEAH STUDIO */
+.studio-type{display:inline-flex;padding:6px 10px;border-radius:999px;background:#152536;color:#fff;font-size:12px;font-weight:900}
+body.light-mode .studio-type{background:#e9eef5;color:#111827}
+
+/* GEAH VIDEO PLAYER */
+.video-box{width:100%;background:#000;border-radius:16px;overflow:hidden;border:1px solid var(--border,#233142);margin:12px 0}.video-box video,.video-box iframe{width:100%;min-height:240px;display:block;border:0}.video-note{font-size:13px;color:var(--muted,#cbd5e1)}
+
+/* ===== GEA-H TV live + lecteur ===== */
+.live-badge{background:#c0392b;color:#fff;font-size:13px;font-weight:800;padding:4px 10px;border-radius:20px;vertical-align:middle}
+.video-box{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;margin:10px 0}
+.video-box iframe,.video-box video{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:contain;background:#000}
+
+/* ===== Galerie biens ===== */
+.prop-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:10px 0}
+.prop-gallery img{width:100%;height:130px;object-fit:cover;border-radius:10px;display:block}
+.prop-price{font-size:20px;color:#013328;margin:8px 0}
+.pgrid{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.pthumb{position:relative}
+.pthumb img{width:120px;height:84px;object-fit:cover;border-radius:8px;display:block}
+.pthumb .x{position:absolute;top:3px;right:3px;margin:0}
+.pthumb .x button{background:rgba(192,57,43,.92);color:#fff;border:0;border-radius:50%;width:24px;height:24px;cursor:pointer;font-weight:700;line-height:1}
+
+/* ===== Footer contact ===== */
+.site-footer{background:#06231b;color:#cfe7d8;margin-top:40px;padding:32px 0 0}
+.site-footer .foot-grid{display:grid;grid-template-columns:1fr 1fr 1.8fr 0.8fr;gap:24px;padding-bottom:20px}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+.site-footer h4{color:#fff;margin:0 0 8px}
+.site-footer p{margin:0;line-height:1.8;font-size:14px}
+.site-footer a{color:#ffd98a;text-decoration:none}
+.site-footer a:hover{text-decoration:underline}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);text-align:center;padding:14px;font-size:13px;color:#9fc3ad}
+
+/* ===== Version build (admin) ===== */
+.build-stamp{font-size:10px;color:#8fe3b8;background:rgba(255,255,255,.07);padding:4px 7px;border-radius:6px;margin:0 0 10px;line-height:1.3}
+
+/* ===== GEA-H TV (accueil) ===== */
+.geah-tv-home{padding-top:10px}
+.geah-tv-frame{position:relative;width:100%;max-width:920px;margin:0 auto;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+#geah-tv-stage,#geah-tv-stage>*{position:absolute;inset:0;width:100%;height:100%}
+.tv-live{background:#c0392b;color:#fff;font-size:13px;font-weight:800;padding:3px 10px;border-radius:999px;animation:tvpulse 1.5s infinite}
+@keyframes tvpulse{0%,100%{opacity:1}50%{opacity:.55}}
+
+/* ===== TV : bandeau + slides pub ===== */
+.tv-chan-badge{position:absolute;left:12px;top:12px;z-index:6;background:rgba(1,51,40,.85);color:#fff;font-size:13px;padding:5px 12px;border-radius:999px;max-width:80%;display:none}
+.tv-chan-badge b{color:#ffd98a}
+.tv-slide{position:absolute;inset:0;background:linear-gradient(135deg,#06231b,#0b3b2e);display:flex;align-items:center;justify-content:center}
+.tv-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.tv-slide-cap{position:relative;z-index:2;text-align:center;color:#fff;padding:24px;max-width:82%}
+.tv-slide-cap h3{font-size:26px;margin:0 0 10px;color:#ffd98a}
+.tv-slide-cap p{font-size:16px;margin:0;line-height:1.5}
+
+/* ===== Menu mobile (hamburger) ===== */
+.geah-burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1;padding:4px 10px}
+@media(max-width:860px){
+  .header .nav{position:relative;flex-wrap:wrap}
+  .geah-burger{display:block;margin-left:auto}
+  .header .menu{display:none;position:absolute;top:100%;left:0;right:0;background:#06231b;flex-direction:column;padding:8px;z-index:60;border-radius:0 0 12px 12px;box-shadow:0 12px 24px rgba(0,0,0,.4)}
+  .header .menu.open{display:flex}
+  .header .menu a{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08);color:#fff;display:block}
+}
+
+/* ===== Assistant IA (chat flottant) ===== */
+#geah-chat-btn{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:#013328;color:#fff;font-size:26px;border:0;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.35);z-index:9998}
+#geah-chat{display:none;position:fixed;right:18px;bottom:86px;width:340px;max-width:92vw;height:460px;max-height:72vh;background:#fff;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.35);z-index:9999;flex-direction:column;overflow:hidden}
+#geah-chat.open{display:flex}
+.gc-head{background:#013328;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.gc-head button{background:none;border:0;color:#fff;font-size:18px;cursor:pointer}
+.gc-body{flex:1;overflow-y:auto;padding:12px;background:#f7f9f8;display:flex;flex-direction:column;gap:8px}
+.gc-msg{padding:9px 12px;border-radius:12px;max-width:85%;font-size:14px;line-height:1.4;white-space:pre-wrap}
+.gc-bot{background:#e8f0ec;color:#1f2937;align-self:flex-start}
+.gc-user{background:#013328;color:#fff;align-self:flex-end}
+.gc-input{display:flex;gap:6px;padding:10px;border-top:1px solid #e5e7eb;background:#fff}
+.gc-input input{flex:1;padding:10px;border:1px solid #cbd5e1;border-radius:8px}
+.gc-input button{background:#c79a3a;color:#fff;border:0;border-radius:8px;padding:0 14px;cursor:pointer;font-weight:700}
+
+/* ===== Multilangue (Google Translate) ===== */
+.geah-gt{position:fixed;left:10px;bottom:10px;z-index:9997;background:#fff;border-radius:8px;padding:3px 8px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.goog-te-banner-frame{display:none!important}
+body{top:0!important}
+
+/* ===== Cadre TÉLÉ ===== */
+.tv-set{max-width:980px;margin:0 auto;background:linear-gradient(#1c1c1c,#080808);padding:18px 18px 28px;border-radius:24px;box-shadow:0 18px 44px rgba(0,0,0,.5),inset 0 0 0 2px #2b2b2b;position:relative}
+.tv-set .geah-tv-frame{max-width:100%;border:3px solid #000;border-radius:10px}
+.tv-set::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:10px;width:130px;height:6px;border-radius:4px;background:#2b2b2b}
+.tv-led{position:absolute;right:26px;bottom:13px;width:9px;height:9px;border-radius:50%;background:#37d67a;box-shadow:0 0 8px #37d67a}
+
+/* ===== Menu mobile ADMIN ===== */
+.admin-burger{display:none}.admin-overlay{display:none}
+@media(max-width:860px){
+  .admin-layout{display:block}
+  .sidebar{position:fixed;left:-300px;top:0;bottom:0;width:270px;z-index:200;transition:left .25s ease;overflow-y:auto}
+  .sidebar.open{left:0}
+  .admin-burger{display:inline-flex;align-items:center;position:fixed;top:10px;left:10px;z-index:201;background:#013328;color:#fff;border:0;border-radius:8px;padding:8px 13px;font-size:20px;cursor:pointer}
+  .admin-main{padding-top:56px}
+  .admin-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:199}
+  .admin-overlay.open{display:block}
+}
+
+/* ===== Grille TV (prochaines émissions) ===== */
+.tv-guide{max-width:980px;margin:12px auto 0;background:#06231b;color:#cfe7d8;border-radius:12px;padding:12px 16px}
+.tv-guide b{color:#ffd98a}
+.tv-guide ul{margin:6px 0 0;padding-left:18px}
+.tv-guide li{margin:3px 0;font-size:14px}
+
+/* ===== Badges propriétaire ===== */
+.owner-badge{display:inline-block;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px;vertical-align:middle;margin-left:6px;white-space:nowrap}
+.ob-gea{background:linear-gradient(90deg,#f3d27a,#d4a23a);color:#3a2a00;box-shadow:0 1px 4px rgba(212,162,58,.4)}
+.ob-part{background:#e5e7eb;color:#374151}
+.ob-ag{background:#dbeafe;color:#1e40af}
+.ob-pro{background:#d1fae5;color:#065f46}
+
+/* ===== Mode SOMBRE uniquement (toggle retiré, light-mode neutralisé) ===== */
+.theme-toggle{display:none!important}
+body.light-mode{--bg:#07111b;--surface:#0c1a27;--surface2:#08131f;--text:#edf5f0;--muted:#cbd5e1;--border:#233142;--gold:#d4a23a}
+body.light-mode .header,body.light-mode .sidebar{background:#050d12!important;color:#edf5f0}
+body.light-mode .hero{background:linear-gradient(150deg,#04110c,#062e22 60%,#050d12)!important;color:#edf5f0}
+body.light-mode .btn-light{background:#152536!important;color:#fff!important}
+
+/* ===== Menu public : pastilles blanches + accent violet ===== */
+.nav{height:auto;min-height:70px;padding:8px 0;flex-wrap:wrap}
+.menu{flex-wrap:wrap;gap:8px}
+.menu a{background:#fff;color:#0c2b25;border-radius:12px;padding:9px 15px;font-weight:800;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.menu a:hover{background:#efeaff;color:#6d28d9}
+.menu a.violet{background:#7c3aed;color:#fff}
+.menu a.violet:hover{background:#6d28d9;color:#fff}
+.btn-violet{background:#7c3aed;color:#fff}
+.btn-violet:hover{background:#6d28d9}
+@media(max-width:850px){.header .menu a{background:transparent;box-shadow:none;border-radius:0;color:#fff}.header .menu a.violet{background:#7c3aed}}
+
+/* ===== Biens : recherche, carrousel, cartes modernes ===== */
+.prop-search{display:flex;gap:8px;flex-wrap:wrap;background:#0c1a24;border:1px solid var(--border);border-radius:14px;padding:10px;margin-bottom:16px}
+.prop-search input[type=text]{flex:1 1 260px;min-width:170px;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:#0e1c26;color:var(--text);font-size:15px}
+.prop-search select{padding:12px;border-radius:10px;border:1px solid var(--border);background:#0e1c26;color:var(--text)}
+.prop-carousel-wrap{position:relative;margin-bottom:6px}
+.prop-carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 10px}
+.prop-carousel::-webkit-scrollbar{height:6px}.prop-carousel::-webkit-scrollbar-thumb{background:#234;border-radius:3px}
+.caro-card{flex:0 0 260px;scroll-snap-align:start;background:#0c1a24;border:1px solid var(--border);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--text);transition:transform .15s,border-color .15s}
+.caro-card:hover{transform:translateY(-3px);border-color:var(--gold)}
+.caro-img{height:150px;background-size:cover;background-position:center;position:relative;background-color:#08131f}
+.caro-cap{padding:10px}.caro-cap b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.caro-cap span{color:var(--muted);font-size:12px}
+.caro-arrow{position:absolute;top:55px;z-index:3;width:40px;height:40px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:22px;cursor:pointer}
+.caro-arrow.left{left:-6px}.caro-arrow.right{right:-6px}
+.prop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.prop-card{background:#0c1a24;border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s,border-color .15s}
+.prop-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.4);border-color:var(--gold)}
+.prop-photo{position:relative;aspect-ratio:16/10;background:#08131f}
+.prop-photo .pmain{width:100%;height:100%;object-fit:cover;display:block}
+.prop-photo .noimg{display:flex;align-items:center;justify-content:center;color:#567;height:100%}
+.tx-badge{position:absolute;top:10px;left:10px;font-size:11px;font-weight:800;letter-spacing:.5px;padding:5px 10px;border-radius:999px;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.tx-vente{background:#16a34a}.tx-loc{background:#7c3aed}
+.vid-badge{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.7);color:#fff;font-size:11px;padding:4px 9px;border-radius:999px}
+.prop-thumbs{display:flex;gap:6px;overflow-x:auto;padding:8px;background:#0a1620}
+.prop-thumbs .pthumb{width:56px;height:42px;object-fit:cover;border-radius:7px;cursor:pointer;border:2px solid transparent;flex:0 0 auto}
+.prop-thumbs .pthumb:hover{border-color:var(--gold)}
+.prop-body{padding:14px;display:flex;flex-direction:column;gap:5px;flex:1}
+.prop-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.prop-status{font-size:11px;color:#9fb;background:rgba(255,255,255,.06);padding:2px 8px;border-radius:999px}
+.prop-title{margin:2px 0;font-size:17px;line-height:1.25}
+.prop-loc{margin:0;color:var(--muted);font-size:13px}
+.prop-price{margin:2px 0;color:var(--gold);font-weight:800;font-size:19px}
+.prop-desc{margin:2px 0;font-size:13.5px;color:#c7d3cc;line-height:1.4}
+.prop-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.prop-actions .btn{flex:1 1 auto;text-align:center;padding:10px 12px;font-size:13.5px}
+@media(max-width:520px){.prop-grid{grid-template-columns:1fr}}
+
+/* GEA-H TV : recherche de biens + petit écran photo */
+.tv-property-panel{padding-top:22px;padding-bottom:8px;background:linear-gradient(180deg,rgba(255,217,138,.06),rgba(0,0,0,0))}
+.tv-property-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+.tv-property-head h2{margin:0;color:var(--gold);font-size:22px}.tv-property-head p{margin:4px 0 0;color:var(--muted)}
+.tv-search{margin-bottom:12px}.tv-search-results{background:#0c1a24;border:1px solid var(--border);border-radius:14px;padding:12px;margin:10px 0;color:var(--text)}
+.tv-mini-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px}
+.tv-mini-card{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--text);background:#08131f;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:8px;transition:.15s}
+.tv-mini-card:hover{border-color:var(--gold);transform:translateY(-2px)}.tv-mini-card img,.tv-noimg{width:70px;height:54px;border-radius:9px;object-fit:cover;background:#142838;display:flex;align-items:center;justify-content:center;color:#9fb;font-size:12px;flex:0 0 auto}
+.tv-mini-card strong{display:block;font-size:13px}.tv-mini-card em{display:block;font-style:normal;color:var(--muted);font-size:12px;margin-top:2px}
+.tv-mini-screen{position:relative;overflow:hidden;border-radius:18px;border:2px solid rgba(255,217,138,.35);background:linear-gradient(135deg,#071711,#102b22);box-shadow:0 12px 30px rgba(0,0,0,.35);padding:12px;margin:12px 0 8px}
+.tv-mini-title{color:var(--gold);font-weight:800;margin-bottom:10px}.tv-mini-track{display:flex;gap:12px;overflow:hidden;scroll-behavior:smooth}
+.tv-mini-slide{min-width:260px;max-width:260px;height:170px;border-radius:14px;overflow:hidden;position:relative;text-decoration:none;color:#fff;background:#000;flex:0 0 auto}
+.tv-mini-slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s}.tv-mini-slide:hover img{transform:scale(1.05)}
+.tv-mini-slide span{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.88))}.tv-mini-slide b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tv-mini-slide small{display:block;color:#ffd98a;margin-top:3px;font-weight:700}
+@media(max-width:640px){.tv-mini-slide{min-width:220px;max-width:220px;height:145px}.tv-property-head h2{font-size:18px}}
+
+/* ===== GEA-H TV : recherche + écran biens intégré au bloc principal ===== */
+.geah-tv-inline-search{max-width:980px;margin:8px auto 14px;display:flex;gap:0;justify-content:flex-end}
+.geah-tv-inline-search input{width:min(420px,78vw);padding:13px 16px;border-radius:999px 0 0 999px;border:2px solid #d4a23a;background:#07111b;color:#fff;outline:none}
+.geah-tv-inline-search button{border:0;border-radius:0 999px 999px 0;background:#d4a23a;color:#111;font-weight:900;padding:0 18px;cursor:pointer}
+.geah-tv-property-screen{max-width:980px;margin:8px auto 18px;border-radius:18px;border:2px solid rgba(212,162,58,.55);background:linear-gradient(135deg,#071711,#102b22);padding:12px;box-shadow:0 12px 32px rgba(0,0,0,.35);overflow:hidden}
+.gtps-title{font-weight:900;color:#ffd98a;margin:0 0 10px;font-size:15px}
+.gtps-track{display:flex;gap:12px;overflow:hidden;scroll-behavior:smooth}
+.gtps-card{position:relative;flex:0 0 255px;height:155px;border-radius:14px;overflow:hidden;background:#000;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.12)}
+.gtps-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s ease}
+.gtps-card:hover img{transform:scale(1.06)}
+.gtps-card span{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.9))}
+.gtps-card b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gtps-card small{display:block;color:#ffd98a;margin-top:3px;font-weight:800}
+@media(max-width:640px){.gtps-card{flex-basis:220px;height:135px}.geah-tv-inline-search{justify-content:center}}
+
+
+/* ===================== GEA-H LOGO PREMIUM + LOADER ===================== */
+.geah-brand-logo{
+  width:48px;height:48px;object-fit:contain;border-radius:50%;background:#fff;
+  padding:3px;margin-right:10px;box-shadow:0 8px 25px rgba(0,0,0,.20);
+  vertical-align:middle;border:2px solid rgba(212,162,58,.55)
+}
+.brand{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.geah-floating-logo{
+  position:fixed;left:22px;top:92px;z-index:850;width:96px;height:96px;border-radius:50%;
+  background:rgba(255,255,255,.96);padding:7px;border:2px solid rgba(212,162,58,.75);
+  box-shadow:0 18px 45px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;
+  backdrop-filter:blur(8px);transition:transform .25s ease, box-shadow .25s ease, opacity .25s ease
+}
+.geah-floating-logo:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 24px 55px rgba(0,0,0,.35)}
+.geah-floating-logo img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+.admin-layout ~ .geah-floating-logo,.login ~ .geah-floating-logo{display:none}
+.geah-loader{
+  position:fixed;inset:0;z-index:99999;background:radial-gradient(circle at center,rgba(212,162,58,.18),transparent 34%),linear-gradient(145deg,#03120d,#061f17 55%,#020806);
+  display:flex;align-items:center;justify-content:center;transition:opacity .55s ease,visibility .55s ease
+}
+.geah-loader.geah-loader-hide{opacity:0;visibility:hidden;pointer-events:none}
+.geah-loader-box{text-align:center;color:#fff;font-weight:900;letter-spacing:.7px}
+.geah-loader-logo{width:132px;height:132px;border-radius:50%;background:#fff;padding:10px;border:3px solid var(--gold,#d4a23a);box-shadow:0 0 0 0 rgba(212,162,58,.7);animation:geahPulse 1.35s infinite ease-in-out, geahFloat 2.4s infinite ease-in-out}
+.geah-loader-text{margin-top:18px;font-size:15px;color:#d4a23a;text-transform:uppercase}
+.geah-loader-bar{margin:14px auto 0;width:190px;height:5px;border-radius:999px;background:rgba(255,255,255,.16);overflow:hidden}
+.geah-loader-bar:before{content:"";display:block;width:45%;height:100%;border-radius:999px;background:#d4a23a;animation:geahLoad 1.1s infinite ease-in-out}
+@keyframes geahPulse{0%{box-shadow:0 0 0 0 rgba(212,162,58,.65)}70%{box-shadow:0 0 0 22px rgba(212,162,58,0)}100%{box-shadow:0 0 0 0 rgba(212,162,58,0)}}
+@keyframes geahFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes geahLoad{0%{transform:translateX(-120%)}100%{transform:translateX(245%)}}
+@media(max-width:850px){.geah-floating-logo{width:72px;height:72px;left:12px;top:82px}.geah-brand-logo{width:40px;height:40px}.nav{height:auto;min-height:70px}.geah-loader-logo{width:108px;height:108px}}
+
+
+.hero-logo-premium{width:150px;height:150px;object-fit:contain;border-radius:50%;background:#fff;padding:8px;border:3px solid rgba(212,162,58,.8);box-shadow:0 20px 50px rgba(0,0,0,.35);margin-bottom:12px}
+.hero-premium{display:flex;align-items:center;justify-content:space-between;gap:30px}.hero-copy{max-width:720px}.hero-logo-card{width:min(310px,36%);min-width:245px;background:rgba(255,255,255,.96);border:1px solid rgba(212,162,58,.65);border-radius:26px;padding:18px;text-align:center;box-shadow:0 22px 60px rgba(0,0,0,.28)}.hero-logo-card img{width:100%;height:auto;object-fit:contain;border-radius:18px}.hero-logo-card span{display:block;margin-top:10px;color:#064e3b;font-weight:900;font-size:13px;letter-spacing:.4px}body.light-mode .hero-logo-card{background:#fff}@media(max-width:850px){.hero-premium{display:block}.hero-logo-card{width:100%;max-width:290px;margin:24px auto 0}.hero-logo-premium{width:118px;height:118px}}
+
+
+/* ===== Menu Connexion / Inscription propre ===== */
+.auth-menu{display:inline-flex!important;align-items:center;gap:0;background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(212,162,58,.35);box-shadow:0 8px 20px rgba(0,0,0,.08);vertical-align:middle}
+.auth-menu a{display:inline-flex!important;align-items:center;justify-content:center;margin:0!important;border-radius:0!important;background:transparent!important;color:#071b14!important;padding:12px 15px!important;font-weight:900!important;text-decoration:none!important;white-space:nowrap}
+.auth-menu a:hover{background:rgba(212,162,58,.15)!important;color:#064e3b!important}
+.auth-menu .auth-sep{width:1px;height:24px;background:rgba(6,61,46,.28);display:inline-block;flex:0 0 auto}
+.auth-menu.logged{border-color:rgba(6,61,46,.28)}
+.auth-menu.logged .logout{color:#b91c1c!important}
+@media(max-width:760px){.auth-menu{width:100%;justify-content:center}.auth-menu a{flex:1;padding:11px 10px!important}}
+
+/* ===== Accueil : écran biens défilants au-dessus de la TV ===== */
+.home-biens-screen{padding:38px 0 10px;background:#08131f;border-top:1px solid rgba(255,255,255,.05)}
+.home-screen-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:14px}
+.home-screen-head h2{font-size:clamp(26px,4vw,42px);margin:6px 0;color:#fff}
+.home-screen-head p{margin:0;color:#cbd5e1;max-width:650px}.screen-kicker{display:inline-block;color:#ffd98a;font-weight:900;letter-spacing:.3px}
+.home-biens-search{display:flex;gap:0;max-width:760px;margin:0 0 16px}.home-biens-search input{border:2px solid #d4a23a;border-radius:999px 0 0 999px;background:#07111b;color:#fff;padding:14px 18px;margin:0}.home-biens-search button{border:0;border-radius:0 999px 999px 0;background:#d4a23a;color:#111;font-weight:900;padding:0 20px;cursor:pointer}
+.home-property-tv{background:linear-gradient(180deg,#1d1d1d,#070707);border-radius:24px;padding:16px;border:1px solid rgba(255,255,255,.15);box-shadow:0 18px 44px rgba(0,0,0,.45)}
+.home-property-stage{position:relative;width:100%;height:390px;background:#000;border-radius:16px;overflow:hidden;border:3px solid #020202}.home-prop-slide{position:absolute;inset:0;opacity:0;transition:opacity .7s ease;color:#fff}.home-prop-slide.active{opacity:1;z-index:2}.home-prop-slide img{width:100%;height:100%;object-fit:cover;display:block}.home-prop-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.25),rgba(0,0,0,.7))}.home-prop-info{position:absolute;left:34px;right:34px;bottom:30px;display:block}.home-prop-info small{display:block;color:#ffd98a;font-weight:900;margin-bottom:8px}.home-prop-info b{display:block;font-size:clamp(28px,5vw,56px);line-height:1.02;max-width:760px}.home-prop-info em{display:inline-block;margin-top:12px;background:#d4a23a;color:#111;font-style:normal;font-weight:900;border-radius:999px;padding:10px 16px}
+.home-property-strip{display:flex;gap:10px;overflow:auto;padding:12px 0 2px;scroll-behavior:smooth}.home-property-strip button{flex:0 0 190px;height:82px;border:2px solid transparent;border-radius:13px;background:#111827;color:#fff;display:flex;align-items:center;gap:9px;padding:8px;text-align:left;cursor:pointer}.home-property-strip button.active{border-color:#d4a23a;background:#17251f}.home-property-strip img{width:62px;height:62px;object-fit:cover;border-radius:9px}.home-property-strip span{font-weight:800;font-size:13px;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:760px){.home-screen-head{display:block}.home-biens-search{max-width:100%}.home-biens-search button{padding:0 12px}.home-property-stage{height:270px}.home-prop-info{left:18px;right:18px;bottom:18px}.home-property-strip button{flex-basis:160px}.home-screen-head .btn{margin-top:12px}}
+
+
+/* ===== V3 Premium : showroom biens + TV ===== */
+.showroom-glow{position:relative;border-color:rgba(212,162,58,.75)!important;box-shadow:0 0 0 1px rgba(212,162,58,.25),0 22px 55px rgba(0,0,0,.55),0 0 36px rgba(212,162,58,.12)!important}
+.showroom-label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px;padding:10px 14px;border-radius:14px;background:linear-gradient(90deg,rgba(212,162,58,.22),rgba(6,78,59,.18));color:#fff;border:1px solid rgba(212,162,58,.35)}
+.showroom-label b{color:#ffd98a;letter-spacing:.6px}.showroom-label span{color:#dbeafe;font-weight:700;font-size:13px}
+.geah-tv-home{background:#08131f;padding-top:10px!important}.geah-tv-home h2{max-width:980px;margin-left:auto;margin-right:auto}.geah-tv-inline-search{max-width:760px;margin:0 auto 18px!important}.geah-tv-inline-search input{background:#07111b!important;color:#fff!important;border-color:#d4a23a!important}.geah-tv-inline-search button{background:#d4a23a!important;color:#111!important}
+.tv-set{border:1px solid rgba(212,162,58,.25)!important}.tv-chan-badge{position:absolute;right:18px;top:16px;background:rgba(255,255,255,.93);color:#064e3b;border-radius:10px;padding:8px 10px;font-weight:900;z-index:6}
+.tv-live{font-size:12px;background:#b91c1c;color:#fff;border-radius:999px;padding:6px 10px;font-weight:900}
+@media(max-width:760px){.showroom-label{display:block}.showroom-label span{display:block;margin-top:4px}}
+
+
+/* === GEA-H FINAL : écran des biens compact + TV continue === */
+.compact-biens-screen{padding-top:26px;padding-bottom:18px}
+.compact-head{align-items:flex-end;margin-bottom:12px}
+.compact-head h2{margin-bottom:4px}
+.compact-head p{margin:0;color:#6b7280}
+.screen-actions{display:flex;gap:10px;flex-wrap:wrap}
+.compact-showroom{background:linear-gradient(180deg,#151515,#050505);border-radius:18px;padding:12px;border:1px solid rgba(255,255,255,.14);box-shadow:0 12px 30px rgba(0,0,0,.34);overflow:hidden}
+.compact-scroll-mask{overflow:hidden;width:100%;padding-top:8px}
+.compact-track{display:flex;gap:14px;width:max-content;animation:geahPropertyMarquee 55s linear infinite;will-change:transform}
+.compact-scroll-mask:hover .compact-track{animation-play-state:paused}
+.compact-prop-card{position:relative;flex:0 0 245px;height:170px;border-radius:14px;overflow:hidden;background:#111;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.14);box-shadow:0 10px 22px rgba(0,0,0,.25)}
+.compact-prop-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s ease,filter .25s ease}
+.compact-prop-card:hover img{transform:scale(1.06);filter:saturate(1.08)}
+.compact-prop-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.82));pointer-events:none}
+.compact-badge{position:absolute;left:10px;top:10px;z-index:3;background:#d4a23a;color:#111;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;text-transform:uppercase;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.compact-info{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:36px 12px 12px;display:block;background:linear-gradient(transparent,rgba(0,0,0,.9))}
+.compact-info small{display:block;color:#ffd98a;font-size:11px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:4px}
+.compact-info b{display:block;font-size:15px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.compact-info em{display:inline-block;margin-top:6px;font-style:normal;font-weight:900;font-size:12px;color:#fff;background:rgba(6,78,59,.9);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:4px 8px}
+@keyframes geahPropertyMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.geah-tv-home{padding-top:18px}.geah-tv-home h2{margin-top:0}.tv-set{max-width:980px!important}.tv-set .geah-tv-frame{height:clamp(300px,52vw,560px)}
+@media(max-width:760px){.compact-head{display:block}.screen-actions{margin-top:10px}.compact-prop-card{flex-basis:210px;height:150px}.compact-track{animation-duration:45s}.tv-set .geah-tv-frame{height:270px}}
+@media(prefers-reduced-motion:reduce){.compact-track{animation:none;overflow-x:auto}.compact-scroll-mask{overflow-x:auto}}
+
+/* ===== Contacts multiples GEA-H ===== */
+.footer-service-contacts{display:grid;grid-template-columns:repeat(2,minmax(140px,1fr));gap:9px 16px;align-content:start}
+@media(max-width:520px){.footer-service-contacts{grid-template-columns:1fr}}
+.footer-service-contact{font-size:13px;line-height:1.5;border-left:3px solid #d4a23a;padding-left:9px}
+.footer-contact-link{display:inline-block;margin-top:6px;font-weight:900}
+.contact-service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:18px}
+.contact-service-card{background:rgba(255,255,255,.06);border:1px solid rgba(212,162,58,.38);border-radius:18px;padding:18px;box-shadow:0 10px 26px rgba(0,0,0,.18)}
+.contact-service-card h2{margin:0 0 12px;color:#d4a23a;font-size:20px}
+.contact-service-card p{margin:8px 0;line-height:1.6}
+.contact-service-card a{color:#ffd98a;text-decoration:none;font-weight:800}
+.contact-hero h1{margin-top:0;color:#d4a23a}
+.contact-admin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:10px 0 18px}
+.contact-admin-card{border:1px solid rgba(212,162,58,.35);border-radius:16px;padding:14px;background:rgba(1,51,40,.05)}
+.contact-admin-card h3{margin:0 0 10px;color:#063d2e}
+.contact-admin-card label{display:block;margin-bottom:8px}
+
+/* ===== GEA-H MODE PRÉ-LANCEMENT VERROUILLÉ ===== */
+.locked-launch{display:block;min-height:100vh;overflow-x:hidden;background:#03070b;color:#fff;position:relative;padding:22px}.launch-bg{position:fixed;inset:0;background:radial-gradient(circle at 18% 18%,rgba(212,162,58,.28),transparent 28%),radial-gradient(circle at 85% 20%,rgba(13,110,253,.16),transparent 30%),linear-gradient(140deg,#02060a,#071722 46%,#04130d);z-index:-1}.launch-shell{width:min(1180px,96%);margin:0 auto;min-height:calc(100vh - 44px);display:grid;grid-template-columns:1.02fr .98fr;gap:22px;align-items:center}.launch-hero-card,.launch-video-card{background:rgba(8,19,31,.78);border:1px solid rgba(212,162,58,.28);box-shadow:0 28px 80px rgba(0,0,0,.42);backdrop-filter:blur(16px);border-radius:28px;padding:28px}.launch-topline{display:inline-flex;align-items:center;gap:9px;color:#fde68a;font-weight:900;letter-spacing:.08em;font-size:12px;background:rgba(212,162,58,.12);border:1px solid rgba(212,162,58,.28);padding:8px 12px;border-radius:999px}.live-dot{width:9px;height:9px;border-radius:50%;background:#f59e0b;box-shadow:0 0 0 6px rgba(245,158,11,.14);display:inline-block}.launch-logo{width:110px;height:110px;border-radius:24px;object-fit:cover;margin:24px 0 8px;border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 45px rgba(0,0,0,.32)}.launch-hero-card h1{font-size:clamp(42px,6vw,78px);line-height:.95;margin:8px 0;color:#fff}.launch-hero-card h2{font-size:clamp(22px,3vw,34px);color:#d4a23a;margin:0 0 12px}.launch-message{color:#dbe7e0;font-size:18px;line-height:1.55}.launch-alert{background:rgba(127,29,29,.4);border:1px solid rgba(248,113,113,.35);padding:12px;border-radius:14px;color:#fecaca;font-weight:800}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0}.countdown div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:14px 8px;text-align:center}.countdown b{display:block;font-size:clamp(27px,4vw,46px);color:#fff}.countdown span{font-size:12px;color:#cbd5e1;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.launch-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.launch-form{display:flex;gap:10px;flex:1;min-width:280px}.launch-form input{margin:0;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff}.launch-video-card video{width:100%;aspect-ratio:16/9;background:#000;border-radius:22px;border:1px solid rgba(255,255,255,.14);display:block;object-fit:cover}.video-label{font-weight:900;color:#fde68a;margin-bottom:12px}.video-placeholder{aspect-ratio:16/9;border-radius:22px;border:1px dashed rgba(212,162,58,.45);display:grid;place-items:center;text-align:center;background:rgba(255,255,255,.05);padding:22px}.video-placeholder img{width:110px;border-radius:22px;opacity:.88}.ai-presenter{display:flex;justify-content:space-between;gap:14px;align-items:center;background:rgba(212,162,58,.10);border:1px solid rgba(212,162,58,.26);border-radius:18px;padding:14px;margin-top:14px}.ai-presenter span{display:block;color:#cbd5e1;font-size:13px}.launch-features{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}.launch-features span{padding:8px 11px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:999px;font-weight:800;font-size:12px;color:#e5eef7}@media(max-width:900px){.launch-shell{grid-template-columns:1fr}.launch-form{min-width:100%;flex-direction:column}.countdown{grid-template-columns:repeat(2,1fr)}.ai-presenter{align-items:flex-start;flex-direction:column}}
+
+/* === GEA-H Promotion / Sponsoring : défilement lent + aperçu grand format === */
+.compact-track{animation-duration:var(--geah-marquee-duration, 120s)!important}
+.compact-track.is-paused{animation-play-state:paused!important}
+.compact-prop-card{cursor:zoom-in}
+.compact-badge.badge-promo{background:#ef4444;color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.18),0 8px 18px rgba(239,68,68,.38)}
+.compact-badge.badge-sponsored{background:#7c3aed;color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.18),0 8px 18px rgba(124,58,237,.38)}
+.compact-badge.badge-new{background:#10b981;color:#062318;box-shadow:0 0 0 2px rgba(255,255,255,.18),0 8px 18px rgba(16,185,129,.34)}
+.geah-property-modal{position:fixed;inset:0;display:none;z-index:99999;padding:22px;align-items:center;justify-content:center}
+.geah-property-modal.open{display:flex}
+.geah-property-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(5px)}
+.geah-property-modal-card{position:relative;z-index:2;width:min(980px,96vw);max-height:92vh;overflow:auto;background:#07131f;color:#fff;border:1px solid rgba(212,162,58,.35);border-radius:24px;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+.geah-property-modal-card img{width:100%;height:min(55vh,520px);object-fit:cover;display:block;background:#000}
+.geah-modal-body{padding:22px}.geah-modal-body h3{font-size:clamp(26px,4vw,46px);margin:6px 0 8px;color:#fff}.modal-kicker{display:inline-block;background:#d4a23a;color:#111;border-radius:999px;padding:7px 12px;font-weight:900}.geah-modal-body p{color:#dbeafe;font-size:16px}.geah-modal-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.geah-modal-close{position:absolute;right:14px;top:12px;z-index:3;width:42px;height:42px;border:0;border-radius:50%;background:rgba(0,0,0,.72);color:#fff;font-size:30px;cursor:pointer}.modal-open{overflow:hidden}
+.admin-promo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.promo-pill{display:inline-block;border-radius:999px;padding:6px 10px;font-weight:900;font-size:12px}.promo-pill.promotion{background:#fee2e2;color:#991b1b}.promo-pill.sponsorise{background:#ede9fe;color:#4c1d95}.promo-pill.nouveau{background:#d1fae5;color:#065f46}
+
+
+/* Pré-lancement surprise : moins d'informations visibles avant le jour J */
+.surprise-launch .launch-shell-surprise{grid-template-columns:1fr 1fr;max-width:1180px}
+.surprise-launch .launch-secret-card h2,.surprise-launch .launch-features,.surprise-launch .launch-form{display:none!important}
+.surprise-launch .launch-secret-card{min-height:520px;display:flex;flex-direction:column;justify-content:center}
+.surprise-launch .launch-secret-video{min-height:520px;display:flex;flex-direction:column;justify-content:center}
+.surprise-launch .launch-message{max-width:520px;color:#e7eef6}
+.launch-video-frame{width:100%;border-radius:22px;overflow:hidden;background:#020617}
+.launch-video-frame video{border-radius:0!important;border:0!important}
+.launch-clean-actions{margin-top:16px}.launch-action-buttons{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.launch-actions-clean{margin-top:18px}.launch-actions-clean .btn{min-width:180px;justify-content:center;text-align:center}
+.launch-video-frame:fullscreen{background:#000;display:grid;place-items:center}.launch-video-frame:fullscreen video{width:100vw;height:100vh;object-fit:contain}.launch-video-frame:fullscreen .video-placeholder{width:100vw;height:100vh;aspect-ratio:auto;border:0;border-radius:0}
+@media(max-width:900px){.surprise-launch .launch-shell-surprise{grid-template-columns:1fr}.surprise-launch .launch-secret-card,.surprise-launch .launch-secret-video{min-height:auto}.launch-action-buttons{justify-content:flex-start}}
+
+/* ===================== GEA-H V5 SHOWROOM HOSTINGER STYLE ===================== */
+.v5-hero{min-height:62vh;position:relative;overflow:hidden;color:#fff;background:#02070b;display:flex;flex-direction:column;justify-content:space-between}.v5-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.04);transition:background-image .7s ease,transform 7s ease;filter:saturate(1.05)}.v5-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,8,12,.93),rgba(3,15,20,.55),rgba(2,8,12,.86)),radial-gradient(circle at 80% 20%,rgba(212,162,58,.2),transparent 30%)}.v5-menu{position:relative;z-index:3;width:min(1240px,94%);margin:18px auto 0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 14px;border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(4,12,17,.66);backdrop-filter:blur(16px);box-shadow:0 20px 60px rgba(0,0,0,.3)}.v5-brand{display:flex;align-items:center;gap:10px;font-weight:1000;color:#fff;white-space:nowrap;flex-shrink:0}.v5-brand img{width:42px;height:42px;border-radius:12px;object-fit:cover;flex-shrink:0}.v5-brand span{color:#d4a23a;font-size:20px;white-space:nowrap}.v5-menu nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}.v5-menu nav a{padding:9px 11px;border-radius:999px;font-weight:800;font-size:14px;color:#e8f2ec}.v5-menu nav a:hover{background:rgba(212,162,58,.18);color:#fff}.v5-nav-drop{position:relative}.v5-nav-drop summary{list-style:none;cursor:pointer;padding:9px 11px;border-radius:999px;font-weight:800;font-size:14px;color:#e8f2ec}.v5-nav-drop summary::-webkit-details-marker{display:none}.v5-nav-drop summary:hover,.v5-nav-drop[open] summary{background:rgba(212,162,58,.18);color:#fff}.v5-nav-drop-menu{position:absolute;top:calc(100% + 6px);left:0;background:#0f1f30;border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:8px;display:flex;flex-direction:column;gap:2px;min-width:190px;z-index:50;box-shadow:0 24px 60px rgba(0,0,0,.45)}.v5-nav-drop-menu a{padding:9px 10px;border-radius:8px;color:#e8f2ec;font-weight:700;font-size:14px;white-space:nowrap}.v5-nav-drop-menu a:hover{background:rgba(212,162,58,.2);color:#fff}.v5-content{position:relative;z-index:2;width:min(1240px,94%);margin:auto;padding:38px 0 30px}.v5-kicker,.screen-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(212,162,58,.14);border:1px solid rgba(212,162,58,.34);color:#fde68a;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:12px}.v5-content h1{font-size:clamp(36px,5.4vw,72px);line-height:.95;max-width:820px;margin:16px 0 10px}.v5-content p{font-size:clamp(16px,1.6vw,21px);max-width:760px;color:#dbe7e0;line-height:1.5}.v5-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.v5-strip{position:relative;z-index:3;display:flex;gap:14px;overflow:hidden;padding:16px max(3vw,18px) 22px;width:max-content;background:linear-gradient(180deg,transparent,rgba(0,0,0,.38));animation:v5StripSlide 45s linear infinite}.v5-strip:hover{animation-play-state:paused}@keyframes v5StripSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}.v5-mini{min-width:260px;max-width:260px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(255,255,255,.09);color:#fff;display:flex;align-items:center;gap:11px;text-align:left;padding:10px;cursor:pointer;backdrop-filter:blur(14px)}.v5-mini:hover{border-color:#d4a23a;transform:translateY(-2px)}.v5-mini img{width:72px;height:58px;border-radius:12px;object-fit:cover}.v5-mini b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.v5-mini small{display:block;color:#cbd5e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.v5-tv-section{background:#06101a;padding:26px 0}.v5-tv-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:12px}.v5-tv-head h2,.v5-modules h2{font-size:clamp(26px,3.2vw,42px);margin:8px 0 0;color:#fff}.v5-modules{background:#07111b}.v5-modules .card{transition:.2s}.v5-modules .card:hover{transform:translateY(-3px);border-color:#d4a23a}
+@media(max-width:760px){.v5-hero{min-height:auto}.v5-content{padding:26px 0 18px}}
+.v5-locked-mode{display:block;padding:0!important;overflow:hidden;background:#02070b}.v5-lock{min-height:100vh;position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column}.v5-lock-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.55) saturate(1.08);transform:scale(1.04);transition:background-image .8s ease}.v5-lock-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,8,12,.96),rgba(2,8,12,.58),rgba(2,8,12,.92)),radial-gradient(circle at 60% 20%,rgba(212,162,58,.2),transparent 35%)}.v5-lock-top{position:relative;z-index:3;width:min(1200px,94%);margin:18px auto;display:flex;align-items:center;justify-content:space-between}.v5-lock-top img{width:58px;height:58px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.2)}.v5-lock-grid{position:relative;z-index:2;width:min(1200px,94%);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}.v5-lock-panel,.v5-lock-video{background:rgba(8,19,31,.72);border:1px solid rgba(212,162,58,.24);border-radius:28px;padding:26px;box-shadow:0 25px 70px rgba(0,0,0,.38);backdrop-filter:blur(16px)}.v5-lock-panel h1{font-size:clamp(42px,6vw,76px);line-height:.95;margin:16px 0 12px}.v5-lock-panel p{color:#dbe7e0;font-size:18px;line-height:1.55}.v5-lock-contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:14px}.v5-lock-contacts div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:15px;padding:10px}.v5-lock-contacts b,.v5-lock-contacts span{display:block}.v5-lock-contacts b{color:#fde68a;margin-bottom:4px}.v5-lock-contacts span{color:#e5eef7;font-size:13px}.v5-lock-video .launch-video-frame{min-height:310px}.v5-lock-video video{width:100%;aspect-ratio:16/9;background:#000;display:block;object-fit:contain}.v5-lock-strip{position:relative;z-index:2;display:flex;gap:12px;overflow:hidden;padding:13px 0 22px;animation:v5LockSlide 55s linear infinite}.v5-lock-strip span{min-width:230px;margin-left:10px;display:flex;align-items:center;gap:9px;padding:9px;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}.v5-lock-strip img{width:58px;height:45px;border-radius:10px;object-fit:cover}.v5-lock-strip b{font-size:13px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.launch-ended .countdown{border:1px solid rgba(34,197,94,.45);border-radius:20px;box-shadow:0 0 0 8px rgba(34,197,94,.08)}@keyframes v5LockSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:900px){.v5-menu{align-items:flex-start;flex-direction:column}.v5-content{padding-top:40px}.v5-lock-grid{grid-template-columns:1fr}.v5-tv-head{align-items:flex-start;flex-direction:column}.v5-mini{min-width:220px}.v5-lock-video .launch-video-frame{min-height:auto}}
+
+
+/* ===== Lancement spectaculaire : fin du compte à rebours ===== */
+.v5-lock.grand-reveal::after{content:"";position:fixed;inset:0;z-index:40;background:radial-gradient(circle at 50% 45%,rgba(255,231,150,.36),transparent 18%),linear-gradient(135deg,rgba(2,8,12,.12),rgba(212,162,58,.38),rgba(2,8,12,.05));animation:grandRevealFlash 4.5s ease forwards;pointer-events:none}.v5-lock.grand-reveal .v5-lock-panel{animation:panelLift 1.2s ease forwards}.v5-lock.grand-reveal .v5-lock-video{animation:videoGlow 1.4s ease forwards}.launch-video-started .video-label::after{content:"  • lancement en cours";color:#22c55e}.launch-fireworks{position:fixed;inset:0;z-index:60;pointer-events:none;overflow:hidden}.launch-fireworks i{position:absolute;bottom:-20px;width:8px;height:14px;border-radius:2px;background:linear-gradient(#fff,#d4a23a);box-shadow:0 0 12px rgba(255,220,120,.9);animation:confettiFly 4.2s cubic-bezier(.19,1,.22,1) forwards}.launch-fireworks i:nth-child(3n){background:linear-gradient(#fff,#22c55e)}.launch-fireworks i:nth-child(4n){background:linear-gradient(#fff,#7c3aed)}.launch-fireworks i:nth-child(5n){background:linear-gradient(#fff,#ef4444)}.site-reveal-overlay{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;text-align:center;color:#fff;background:radial-gradient(circle at 50% 35%,rgba(212,162,58,.35),transparent 24%),linear-gradient(135deg,#02120c,#064331,#02070b);animation:siteRevealOut 5.1s ease forwards}.site-reveal-overlay img{width:130px;height:130px;object-fit:cover;border-radius:30px;box-shadow:0 25px 90px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.25)}.site-reveal-overlay h1{font-size:clamp(32px,5vw,68px);margin:22px 0 8px}.site-reveal-overlay p{font-size:20px;color:#fde68a;font-weight:900}@keyframes confettiFly{0%{transform:translate3d(0,0,0) rotate(0);opacity:1}70%{opacity:1}100%{transform:translate3d(var(--x),-105vh,0) rotate(var(--r));opacity:0}}@keyframes grandRevealFlash{0%{opacity:0}18%{opacity:1}100%{opacity:0}}@keyframes panelLift{to{transform:translateY(-22px);opacity:.55}}@keyframes videoGlow{to{box-shadow:0 0 0 6px rgba(212,162,58,.16),0 35px 95px rgba(212,162,58,.28)}}@keyframes siteRevealOut{0%,72%{opacity:1}100%{opacity:0;visibility:hidden}}
+
+
+/* GEA-H V24 - Pré-lancement effet surprise : seules les annonces en défilement restent visibles */
+body.v5-locked-mode{
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  background:#02070b!important;
+}
+body.prelaunch.v5-locked-mode{
+  padding:0!important;
+  display:block!important;
+}
+.geah-surprise-lock{
+  min-height:100vh;
+  overflow-y:auto!important;
+}
+.geah-surprise-lock .v5-lock-grid{
+  margin:52px auto 18px!important;
+}
+.geah-surprise-lock .v5-lock-panel,
+.geah-surprise-lock .v5-lock-video{
+  border-color:rgba(212,162,58,.45)!important;
+  background:linear-gradient(145deg,rgba(3,10,15,.88),rgba(9,19,31,.72))!important;
+}
+.geah-surprise-lock .v5-lock-panel h1{
+  font-size:clamp(62px,9vw,122px)!important;
+  letter-spacing:2px;
+  color:#fff;
+  text-shadow:0 0 22px rgba(212,162,58,.45);
+}
+.geah-surprise-lock .v5-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 15px;
+  border-radius:999px;
+  background:rgba(212,162,58,.14);
+  border:1px solid rgba(212,162,58,.45);
+  color:#ffe08a;
+  font-weight:900;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+}
+.geah-surprise-lock .countdown{
+  margin-top:32px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.geah-surprise-lock .countdown div{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(212,162,58,.35);
+  border-radius:18px;
+  padding:22px 10px;
+  text-align:center;
+  box-shadow:inset 0 0 28px rgba(212,162,58,.07),0 15px 45px rgba(0,0,0,.25);
+}
+.geah-surprise-lock .countdown b{
+  font-size:clamp(34px,5vw,64px);
+  color:#fff;
+  display:block;
+}
+.geah-surprise-lock .countdown span{
+  color:#ffe08a;
+  font-weight:800;
+  text-transform:uppercase;
+  font-size:12px;
+  letter-spacing:.8px;
+}
+.geah-surprise-lock .video-label{
+  color:#ffe08a;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+}
+.geah-surprise-lock .video-placeholder{
+  min-height:310px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+}
+.geah-surprise-lock .video-placeholder img{
+  width:110px;
+  border-radius:24px;
+  opacity:.92;
+}
+.geah-surprise-lock .video-placeholder p{
+  font-size:clamp(26px,4vw,54px)!important;
+  font-weight:900;
+  color:#fff;
+  max-width:760px;
+  line-height:1.15;
+  text-transform:uppercase;
+  text-shadow:0 0 26px rgba(212,162,58,.38);
+}
+.geah-surprise-lock .v5-lock-strip{
+  position:relative;
+  z-index:4;
+  margin-top:auto;
+  padding:12px 0 18px;
+  background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(6,24,18,.28),rgba(0,0,0,.5));
+  border-top:1px solid rgba(212,162,58,.18);
+}
+.geah-surprise-lock .v5-lock-strip span{
+  min-width:260px;
+}
+.geah-surprise-lock .v5-lock-top{
+  margin-top:18px!important;
+}
+.geah-surprise-lock .launch-action-buttons{
+  justify-content:center;
+}
+.geah-surprise-lock .btn-light,
+.geah-surprise-lock #speakLaunch{
+  display:none!important;
+}
+@media(max-width:900px){
+  .geah-surprise-lock .v5-lock-grid{grid-template-columns:1fr!important;margin-top:24px!important}
+  .geah-surprise-lock .countdown{grid-template-columns:repeat(2,1fr)}
+}
+
+
+/* GEA-H V25 - Lancement spectaculaire : secret total puis reveal */
+body.v5-locked-mode .v5-modules,
+body.v5-locked-mode nav,
+body.v5-locked-mode .main-menu,
+body.v5-locked-mode .menu-public,
+body.v5-locked-mode .geah-public-menu{
+  display:none!important;
+}
+.v25-secret-top{
+  pointer-events:auto;
+}
+.v25-reveal-fx{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .4s ease;
+  overflow:hidden;
+}
+.v25-revealing .v25-reveal-fx{
+  opacity:1;
+  background:radial-gradient(circle at 50% 45%,rgba(255,215,105,.28),rgba(0,0,0,.94) 55%,#000 100%);
+}
+/* Correction chevauchement écran de reveal : on masque totalement le compte à rebours
+   et l'écran vidéo (placeholder inclus) dès que l'animation finale démarre, pour que
+   seul le texte "GEA-H HOLDING" du reveal soit visible, sans superposition de texte. */
+.v25-revealing .v5-lock-panel,
+.v25-revealing .v5-lock-video,
+.v25-revealing .v5-lock-top,
+.v25-revealing .v5-lock-strip{
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transition:opacity .3s ease;
+}
+/* ===== Portail d'entrée (teaser affiché à l'arrivée sur la page de pré-lancement) ===== */
+.v25-lock-auth-actions{display:flex;gap:10px;align-items:center}
+.v25-btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.55);color:#fff;border-radius:12px;padding:11px 15px;font-weight:800;text-decoration:none;display:inline-block;white-space:nowrap}
+.v25-btn-ghost:hover{background:rgba(255,255,255,.14);border-color:#d4a23a}
+.v25-entry-gate{
+  position:fixed;inset:0;z-index:999999;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  overflow:hidden;cursor:pointer;
+  background:radial-gradient(circle at 50% 42%,rgba(212,162,58,.24),transparent 45%),linear-gradient(160deg,#02120c,#03150f 45%,#02070b);
+  opacity:1;visibility:visible;
+  transition:opacity .55s ease,visibility .55s ease;
+}
+.v25-entry-gate.v25-gate-closed{opacity:0;visibility:hidden;pointer-events:none}
+.v25-gate-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:0 20px}
+.v25-gate-content img{width:min(190px,32vw);border-radius:32px;box-shadow:0 0 70px rgba(255,215,105,.45);animation:v25GateFloat 3.6s ease-in-out infinite}
+.v25-gate-content b{color:#fff;font-size:clamp(34px,6vw,88px);letter-spacing:3px;margin-top:22px;text-shadow:0 0 35px rgba(255,215,105,.6)}
+.v25-gate-content span{color:#ffe08a;font-size:clamp(16px,2vw,28px);margin-top:12px;letter-spacing:1px;font-style:normal}
+.v25-gate-hint{display:block;margin-top:34px;color:#ffe08a;font-weight:900;letter-spacing:1.2px;font-size:clamp(14px,2.2vw,20px);text-transform:uppercase;opacity:.6;font-style:normal;animation:v25HintPulse 1.8s ease-in-out infinite}
+.v25-gate-stars,.v25-gate-confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.v25-gate-stars i{position:absolute;width:4px;height:4px;border-radius:50%;background:#ffe08a;box-shadow:0 0 10px #fff,0 0 18px #d4a23a;animation:v25HintPulse 2.6s ease-in-out infinite}
+.v25-gate-confetti i{position:absolute;top:-6vh;width:9px;height:15px;border-radius:3px;background:linear-gradient(135deg,#fff,#ffd36b,#0b6b4a);animation:v25GateFall 5.5s linear infinite}
+.v25-gate-confetti i:nth-child(3n){background:linear-gradient(135deg,#fff,#22c55e)}
+.v25-gate-confetti i:nth-child(4n){background:linear-gradient(135deg,#fff,#7c3aed)}
+@keyframes v25GateFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes v25HintPulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes v25GateFall{0%{transform:translateY(-10vh) rotate(0);opacity:0}8%{opacity:1}100%{transform:translateY(115vh) rotate(540deg);opacity:.9}}
+@media(max-width:640px){.v25-lock-auth-actions{gap:6px}.v25-btn-ghost{padding:9px 11px;font-size:13px}}
+.v25-flash{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle,#fff 0%,rgba(255,255,255,.72) 12%,rgba(255,215,105,.18) 35%,transparent 60%);
+  animation:v25Flash 2.8s ease forwards;
+}
+.v25-logo{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  transform:scale(.8);
+  opacity:0;
+  animation:v25Logo 5.6s ease forwards .6s;
+}
+.v25-logo img{
+  width:min(190px,32vw);
+  border-radius:32px;
+  box-shadow:0 0 70px rgba(255,215,105,.45);
+}
+.v25-logo b{
+  color:#fff;
+  font-size:clamp(34px,6vw,88px);
+  letter-spacing:3px;
+  margin-top:22px;
+  text-shadow:0 0 35px rgba(255,215,105,.6);
+}
+.v25-logo span{
+  color:#ffe08a;
+  font-size:clamp(16px,2vw,28px);
+  margin-top:12px;
+  letter-spacing:1px;
+}
+.v25-star{
+  position:absolute;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#ffe08a;
+  box-shadow:0 0 16px #fff,0 0 28px #d4a23a;
+  animation:v25Star 3.8s ease-out forwards;
+}
+.v25-confetti{
+  position:absolute;
+  top:-30px;
+  width:10px;
+  height:16px;
+  border-radius:3px;
+  background:linear-gradient(135deg,#fff,#ffd36b,#0b6b4a);
+  animation:v25Confetti 4.6s ease-in forwards;
+}
+@keyframes v25Flash{
+  0%{opacity:0;transform:scale(.2)}
+  18%{opacity:1;transform:scale(1)}
+  100%{opacity:0;transform:scale(2.4)}
+}
+@keyframes v25Logo{
+  0%{opacity:0;transform:scale(.6) translateY(30px)}
+  22%{opacity:1;transform:scale(1) translateY(0)}
+  82%{opacity:1;transform:scale(1.04)}
+  100%{opacity:0;transform:scale(1.35)}
+}
+@keyframes v25Star{
+  0%{opacity:0;transform:translate(0,0) scale(.2)}
+  15%{opacity:1}
+  100%{opacity:0;transform:translate(var(--x),var(--y)) scale(1.8)}
+}
+@keyframes v25Confetti{
+  0%{opacity:0;transform:translateY(0) rotate(0)}
+  12%{opacity:1}
+  100%{opacity:0;transform:translateY(115vh) rotate(var(--r))}
+}
+.site-reveal-overlay{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:radial-gradient(circle at 50% 40%,rgba(212,162,58,.25),#02070b 62%);
+  display:grid;
+  place-items:center;
+  color:#fff;
+  text-align:center;
+  animation:v25PublicReveal 5.2s ease forwards;
+}
+.site-reveal-overlay img{
+  width:120px;
+  border-radius:24px;
+  box-shadow:0 0 50px rgba(255,215,105,.42);
+}
+.site-reveal-overlay h1{
+  font-size:clamp(34px,5vw,74px);
+}
+@keyframes v25PublicReveal{
+  0%,72%{opacity:1}
+  100%{opacity:0;visibility:hidden}
+}
+
+
+/* GEA-H V25 - vidéo de présentation en mode plein écran automatique / cinéma */
+body.v25-video-presentation-fullscreen{
+  overflow:hidden!important;
+}
+.v25-video-presentation-fullscreen .v5-lock-grid{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  display:block!important;
+}
+.v25-video-presentation-fullscreen .v5-lock-panel,
+.v25-video-presentation-fullscreen .v5-lock-top,
+.v25-video-presentation-fullscreen .v5-lock-strip{
+  opacity:0!important;
+  pointer-events:none!important;
+  transform:scale(.96);
+  transition:opacity .45s ease, transform .45s ease;
+}
+.v25-video-presentation-fullscreen .v5-lock-video{
+  position:fixed!important;
+  inset:0!important;
+  z-index:9998!important;
+  width:100vw!important;
+  height:100vh!important;
+  border-radius:0!important;
+  padding:0!important;
+  border:0!important;
+  background:#000!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.v25-video-presentation-fullscreen .v5-lock-video .video-label,
+.v25-video-presentation-fullscreen .launch-action-buttons{
+  display:none!important;
+}
+.v25-video-presentation-fullscreen .launch-video-frame,
+.v25-playing-fullscreen{
+  width:100vw!important;
+  height:100vh!important;
+  min-height:100vh!important;
+  background:#000!important;
+}
+.v25-video-presentation-fullscreen .launch-video-frame video{
+  width:100vw!important;
+  height:100vh!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  background:#000!important;
+}
+.v25-video-presentation-fullscreen .video-placeholder{
+  width:100vw!important;
+  height:100vh!important;
+  background:#000!important;
+}
+
+
+/* GEA-H V26 - Correction globale layout Admin/Rôles : le menu ne cache plus le contenu */
+:root{
+  --geah-sidebar-width:260px;
+}
+body:has(.admin-layout){
+  overflow-x:hidden!important;
+}
+.admin-layout{
+  display:grid!important;
+  grid-template-columns:var(--geah-sidebar-width) minmax(0,1fr)!important;
+  min-height:100vh!important;
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:hidden!important;
+}
+.admin-layout .sidebar{
+  grid-column:1!important;
+  width:var(--geah-sidebar-width)!important;
+  min-width:var(--geah-sidebar-width)!important;
+  max-width:var(--geah-sidebar-width)!important;
+  position:sticky!important;
+  left:auto!important;
+  top:0!important;
+  height:100vh!important;
+  z-index:10!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+}
+.admin-layout .admin-main{
+  grid-column:2!important;
+  min-width:0!important;
+  width:100%!important;
+  max-width:100%!important;
+  margin-left:0!important;
+  padding:26px 30px!important;
+  overflow-x:auto!important;
+}
+.admin-main .grid,
+.admin-main .wsg,
+.admin-main .kpis{
+  max-width:100%!important;
+}
+.admin-main .card,
+.admin-main .wcard,
+.admin-main .kpi{
+  min-width:0!important;
+}
+.admin-main table,
+.admin-main .table{
+  width:100%!important;
+  max-width:100%!important;
+}
+.admin-burger,
+.admin-overlay{
+  display:none!important;
+}
+
+/* En dessous de 720px seulement, le menu devient mobile */
+@media(max-width:720px){
+  .admin-layout{
+    display:block!important;
+  }
+  .admin-layout .sidebar{
+    position:fixed!important;
+    left:-285px!important;
+    top:0!important;
+    bottom:0!important;
+    width:270px!important;
+    min-width:270px!important;
+    max-width:270px!important;
+    height:100vh!important;
+    z-index:2000!important;
+    transition:left .25s ease!important;
+  }
+  .admin-layout .sidebar.open{
+    left:0!important;
+  }
+  .admin-layout .admin-main{
+    margin-left:0!important;
+    padding:62px 16px 24px!important;
+    width:100%!important;
+  }
+  .admin-burger{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    position:fixed!important;
+    top:12px!important;
+    left:12px!important;
+    z-index:2100!important;
+    background:#013328!important;
+    color:#fff!important;
+    border:1px solid rgba(212,162,58,.35)!important;
+    border-radius:10px!important;
+    padding:8px 13px!important;
+    font-size:20px!important;
+    cursor:pointer!important;
+  }
+  .admin-overlay{
+    display:none!important;
+    position:fixed!important;
+    inset:0!important;
+    z-index:1900!important;
+    background:rgba(0,0,0,.55)!important;
+  }
+  .admin-overlay.open{
+    display:block!important;
+  }
+  .wsg{
+    grid-template-columns:1fr!important;
+  }
+}
+
+/* Sécurité contre les anciens styles mobile qui forçaient display:block à 850/860px */
+@media(min-width:721px){
+  .admin-layout{
+    display:grid!important;
+    grid-template-columns:var(--geah-sidebar-width) minmax(0,1fr)!important;
+  }
+  .admin-layout .sidebar{
+    position:sticky!important;
+    left:auto!important;
+  }
+}
+
+
+/* GEA-H V29 - Tableau de bord remonté + menu réduit */
+.admin-layout{
+  --sidebar-expanded:260px;
+  --sidebar-collapsed:78px;
+}
+.admin-main,
+.admin-main.v28-dashboard{
+  padding-top:18px!important;
+  align-self:start!important;
+  min-height:0!important;
+  height:auto!important;
+}
+.admin-main > h1:first-child,
+.admin-main.v28-dashboard > h1:first-child{
+  margin-top:0!important;
+}
+.v28-dashboard{
+  padding-top:0!important;
+}
+.v28-hero{
+  margin-top:0!important;
+}
+.admin-layout .sidebar{
+  transition:width .22s ease,min-width .22s ease,max-width .22s ease;
+}
+.sidebar-toggle-mini{
+  position:sticky;
+  top:0;
+  z-index:30;
+  width:100%;
+  border:1px solid rgba(212,162,58,.28);
+  background:rgba(212,162,58,.12);
+  color:#ffe08a;
+  border-radius:12px;
+  padding:9px 8px;
+  margin:4px 0 12px;
+  font-weight:900;
+  cursor:pointer;
+}
+.admin-layout.sidebar-collapsed{
+  grid-template-columns:var(--sidebar-collapsed) minmax(0,1fr)!important;
+}
+.admin-layout.sidebar-collapsed .sidebar{
+  width:var(--sidebar-collapsed)!important;
+  min-width:var(--sidebar-collapsed)!important;
+  max-width:var(--sidebar-collapsed)!important;
+  padding-left:8px!important;
+  padding-right:8px!important;
+}
+.admin-layout.sidebar-collapsed .sidebar h2,
+.admin-layout.sidebar-collapsed .sidebar .build-stamp,
+.admin-layout.sidebar-collapsed .sidebar a:not(.active) {
+  overflow:hidden;
+}
+.admin-layout.sidebar-collapsed .sidebar h2{
+  font-size:0!important;
+  text-align:center;
+}
+.admin-layout.sidebar-collapsed .sidebar h2:before{
+  content:"GEA";
+  font-size:14px;
+  color:var(--gold);
+}
+.admin-layout.sidebar-collapsed .sidebar a{
+  justify-content:center!important;
+  padding:11px 6px!important;
+  gap:0!important;
+  min-height:42px;
+}
+.admin-layout.sidebar-collapsed .sidebar a .ic{
+  width:auto!important;
+  font-size:20px!important;
+}
+.admin-layout.sidebar-collapsed .sidebar a{
+  font-size:0!important;
+}
+.admin-layout.sidebar-collapsed .sidebar a .ic{
+  font-size:20px!important;
+}
+.admin-layout.sidebar-collapsed .sidebar-toggle-mini{
+  font-size:0!important;
+}
+.admin-layout.sidebar-collapsed .sidebar-toggle-mini:before{
+  content:"☰";
+  font-size:20px;
+}
+.admin-layout.sidebar-collapsed .build-stamp{
+  display:none!important;
+}
+@media(max-width:720px){
+  .admin-layout.sidebar-collapsed{
+    display:block!important;
+  }
+}
+
+
+/* GEA-H V30 - TV en haut des dashboards + correction espace vide */
+.admin-main,.admin-main.v28-dashboard{padding-top:14px!important}
+.geah-tv-dashboard-screen{position:relative;min-height:var(--tv-height,360px);border-radius:28px;overflow:hidden;border:1px solid rgba(212,162,58,.32);background:radial-gradient(circle at 20% 20%,rgba(212,162,58,.18),transparent 35%),linear-gradient(135deg,#02070b,#071923 55%,#02130d);box-shadow:0 24px 80px rgba(0,0,0,.38),inset 0 0 80px rgba(212,162,58,.06);margin:0 0 22px!important}
+.geah-tv-dashboard-screen .tv-bg-glow{position:absolute;inset:-30%;background:conic-gradient(from 160deg,transparent,rgba(212,162,58,.12),transparent,rgba(10,191,116,.10),transparent);animation:tvGlowSpin 18s linear infinite}
+.tv-screen-head{position:absolute;left:18px;right:18px;top:14px;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#fff}
+.tv-screen-head b{font-size:18px;color:#ffe08a;margin-right:8px}.tv-screen-head small{color:#cbd5e1}
+.tv-live-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#22c55e;margin-right:9px;box-shadow:0 0 14px #22c55e}
+.tv-badge{border:1px solid rgba(34,197,94,.35);background:rgba(34,197,94,.12);color:#bbf7d0;border-radius:999px;padding:7px 11px;font-weight:900;font-size:12px}
+.tv-player-wrap{position:absolute;inset:0;background:#000;display:grid;place-items:center}
+.geah-tv-player{width:100%;height:100%;object-fit:cover;display:block;background:#000;filter:saturate(1.08) contrast(1.04)}
+.tv-empty{position:absolute;inset:0;display:none;place-items:center;text-align:center;color:#fff;padding:30px;background:linear-gradient(135deg,rgba(3,9,14,.92),rgba(3,26,20,.82))}
+.tv-empty b{display:block;font-size:clamp(26px,4vw,52px);color:#ffe08a;margin-bottom:10px}.tv-empty span{color:#dbe7e0}
+.tv-nowbar{position:absolute;left:18px;right:18px;bottom:14px;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px);border-radius:16px;padding:10px 13px;color:#fff}
+.tv-now-title{font-weight:900;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tv-now-count{color:#ffe08a;font-weight:800;font-size:13px}
+@keyframes tvGlowSpin{to{transform:rotate(360deg)}}.admin-main:before{display:none!important}.v28-dashboard .v28-hero{margin-top:0!important}
+@media(max-width:720px){.geah-tv-dashboard-screen{min-height:260px;border-radius:20px}.tv-screen-head{top:10px;left:10px;right:10px}.tv-nowbar{left:10px;right:10px;bottom:10px}}
+
+/* === Vitrine publicitaire du tableau de bord (biens + vidéos) === */
+.tv-slide-stage{position:absolute;inset:0;z-index:1}
+.tv-prop-slide{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .8s ease}
+.tv-prop-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(2,8,12,.94) 0%,rgba(2,8,12,.30) 46%,rgba(2,8,12,0) 72%)}
+.tv-prop-info{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;z-index:2;color:#fff}
+.tv-prop-info h3{margin:7px 0 5px;font-size:clamp(16px,2.4vw,27px);line-height:1.15;text-shadow:0 2px 14px rgba(0,0,0,.7)}
+.tv-prop-meta{display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:clamp(13px,1.8vw,18px)}
+.tv-prop-meta b{color:#ffd47a;font-size:1.18em;font-weight:800}
+.tv-tx{display:inline-block;padding:4px 11px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.6px}
+.tv-tx-loc{background:#0a3d8a;color:#cfe2ff}
+.tv-tx-sell{background:#7a4d00;color:#ffe0a3}
+.geah-tv-empty-mini{min-height:120px!important}
+.tv-mini-empty{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:18px 22px;color:#9fb0bd;font-size:14px;line-height:1.5}
+
+/* === CORRECTIF DÉFINITIF : contenu des tableaux de bord collé EN HAUT === */
+.admin-main.v28-dashboard{
+  min-height:auto !important;
+  display:block !important;
+  align-self:start !important;
+  justify-content:flex-start !important;
+  align-items:flex-start !important;
+  padding-top:14px !important;
+}
+.admin-main.v28-dashboard > *:first-child{ margin-top:0 !important; }
+.admin-main{ align-self:start !important; }
+
+/* === ESPACEMENT DES BOUTONS FLOTTANTS (qu'ils ne se chevauchent plus) === */
+#geah-chat-btn{ bottom:18px !important; right:18px !important; }
+.geah-data-mode-btn{ bottom:92px !important; right:18px !important; left:auto !important; }
+.theme-toggle{ bottom:166px !important; right:18px !important; }
+.geah-lang-box{ display:inline-flex !important; align-items:center !important; gap:8px !important; position:fixed !important; left:16px !important; bottom:80px !important; right:auto !important; top:auto !important; z-index:100000 !important; background:#063d2e !important; color:#fff !important; border:2px solid #d4a23a !important; border-radius:999px !important; padding:9px 14px !important; box-shadow:0 10px 35px rgba(0,0,0,.45) !important; width:auto !important; max-width:none !important; font-weight:900 !important; }
+.geah-lang-box::before{ content:'🌍 Traduire :'; font-size:13px; color:#ffd98a; white-space:nowrap; }
+.geah-lang-box > span{ display:none !important; }
+.geah-lang-box select{ background:#fff !important; color:#063d2e !important; border:0 !important; border-radius:999px !important; padding:6px 12px !important; margin:0 !important; width:auto !important; font-weight:900 !important; cursor:pointer; }
+.geah-gt{ display:none !important; }
+@media (max-width:640px){
+  .geah-data-mode-btn{ bottom:86px !important; right:14px !important; }
+  .theme-toggle{ bottom:154px !important; right:14px !important; }
+}
+
+/* === TRADUCTEUR VRAIMENT COMPACT (cacher le texte qui l'allonge) === */
+.geah-lang-box{ width:max-content !important; max-width:300px !important; flex-wrap:nowrap !important; white-space:nowrap !important; }
+.geah-lang-note{ display:none !important; }
+.geah-lang-box select{ width:auto !important; min-width:0 !important; max-width:180px !important; }
+/* === DASHBOARD : contenu collé tout en haut === */
+.admin-main{ padding-top:12px !important; }
+.admin-main > *:first-child{ margin-top:0 !important; }
+.admin-main > h1:first-of-type{ margin-top:0 !important; }
+
+/* === CORRECTIF MAJEUR : le loader en SUPERPOSITION (ne pousse plus le contenu) === */
+.geah-loader{
+  position:fixed !important; inset:0 !important; z-index:99999 !important;
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  background:#07111b !important;
+  animation:geahLoaderAutohide 0s linear 3s forwards;
+}
+@keyframes geahLoaderAutohide{ to{ opacity:0 !important; visibility:hidden !important; pointer-events:none !important; } }
+.geah-loader.geah-loader-hide{ opacity:0 !important; visibility:hidden !important; pointer-events:none !important; }
+/* Traducteur : encore plus compact */
+.geah-lang-box{ padding:7px 12px !important; gap:6px !important; }
+.geah-lang-box select{ max-width:150px !important; padding:5px 10px !important; font-size:13px !important; }
+
+/* === TRADUCTEUR MINUSCULE (juste le globe + petit menu, comme le bouton Auto) === */
+.geah-lang-box::before{ display:none !important; }
+.geah-lang-box > span{ display:inline-flex !important; font-size:14px !important; }
+.geah-lang-box{ padding:6px 9px !important; gap:5px !important; }
+.geah-lang-box select{ max-width:112px !important; font-size:12px !important; padding:4px 7px !important; }
+/* === Sortir Google Translate du flux (résidu d'espace en haut) === */
+body{ top:0 !important; margin-top:0 !important; position:static !important; }
+.geah-gt, #google_translate_element{ position:fixed !important; left:-9999px !important; top:auto !important; bottom:auto !important; width:1px !important; height:1px !important; overflow:hidden !important; opacity:0 !important; }
+.skiptranslate, .goog-te-banner-frame, .goog-te-gadget, .goog-te-spinner-pos, #goog-gt-tt{ display:none !important; }
+.admin-main{ padding-top:10px !important; }
+.admin-main > *:first-child{ margin-top:0 !important; }
+
+/* === CORRECTIF GARANTI : contenu du tableau de bord packé EN HAUT === */
+.admin-main{ display:flex !important; flex-direction:column !important; justify-content:flex-start !important; align-content:flex-start !important; min-height:0 !important; padding-top:12px !important; }
+.admin-main > *{ flex:0 0 auto !important; }
+.admin-main > *:first-child{ margin-top:0 !important; }
+.admin-main::before{ content:none !important; display:none !important; }
+.admin-burger{ position:fixed !important; }
+@media(min-width:851px){ .admin-burger{ display:none !important; } }
+
+/* === FOND ANIMÉ : biens qui défilent derrière le tableau de bord (sans pousser le contenu) === */
+.admin-main{ position:relative !important; }
+.dash-bien-strip{ overflow:hidden; height:96px; margin:0 0 6px; border-radius:12px; }
+.dash-bien-strip-track{ display:flex; gap:10px; width:max-content; height:96px; animation:dashBienAutoScroll 35s linear infinite; }
+.dash-bien-strip:hover .dash-bien-strip-track{ animation-play-state:paused; }
+@keyframes dashBienAutoScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+.dash-bien-thumb{ flex:0 0 auto; width:140px; height:96px; border-radius:12px; background-size:cover; background-position:center; background-color:#0f1c17; border:1px solid rgba(212,162,58,.25); }
+.admin-main > *{ position:relative; z-index:1; }
+
+/* ===== GEA-H V77 : correctif définitif contre l'espace vide en haut du tableau de bord =====
+   De nombreuses règles .admin-main se sont accumulées au fil des versions (certaines avec
+   min-height:100vh, d'autres en display:flex...) et se contredisaient selon l'ordre de
+   chargement/cache. Ce bloc, placé en toute fin de fichier, gagne systématiquement sur
+   tout ce qui précède et impose un comportement simple, prévisible, sans espace vide. */
+.admin-layout{ align-items:start!important; }
+.admin-main{
+  display:block!important;
+  min-height:0!important;
+  height:auto!important;
+  padding:20px 30px 40px!important;
+  margin:0!important;
+  overflow:visible!important;
+}
+.admin-main > *{
+  position:relative!important;
+  z-index:1!important;
+}
+.admin-main > h1:first-child,
+.admin-main > .dash-bien-strip:first-child{
+  margin-top:0!important;
+}

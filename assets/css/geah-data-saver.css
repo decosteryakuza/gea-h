@@ -1,0 +1,8 @@
+.geah-data-mode-btn{position:fixed;right:14px;bottom:78px;z-index:9999;border:0;border-radius:999px;padding:10px 14px;background:#0b6b4a;color:#fff;font-weight:800;box-shadow:0 10px 28px rgba(0,0,0,.25);cursor:pointer}
+.geah-data-eco .site-reveal-overlay,.geah-data-eco .geah-loader{animation:none!important}
+.geah-data-eco *{scroll-behavior:auto!important}
+.geah-data-eco img{content-visibility:auto}
+.geah-data-eco .tv-slide img,.geah-data-eco .property-card img{filter:none!important}
+.geah-data-eco .particle,.geah-data-eco .confetti,.geah-data-eco .firework{display:none!important}
+.geah-data-eco video{max-height:70vh}
+@media (max-width:640px){.geah-data-mode-btn{bottom:72px;right:10px;font-size:12px;padding:8px 10px}}

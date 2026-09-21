@@ -1,0 +1,12 @@
+<?php
+require_once __DIR__.'/../core.php';
+require_once __DIR__.'/auth.php'; require_role('api');
+require_admin();
+$msg='';
+if($_SERVER['REQUEST_METHOD']==='POST'){
+    $cfg=api_config();
+    foreach(['cloudinary_cloud','cloudinary_key','cloudinary_secret','cloudflare_r2_endpoint','cloudflare_r2_access_key','cloudflare_r2_secret_key','cloudflare_r2_bucket','cloudflare_r2_public_url'] as $k){ $cfg[$k]=trim($_POST[$k]??''); }
+    save_api_config($cfg); $msg='Paramètres cloud enregistrés.';
+}
+$c=api_config();
+?><!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cloud & Sauvegarde</title><link rel="stylesheet" href="/assets/css/style.css?v=110"><style>.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}.notice-ok{background:#073b22;border:1px solid #20b26b;color:#dcffe9;padding:12px;border-radius:14px}.admin-main input{width:100%}</style></head><body><div class="admin-layout"><?php include __DIR__.'/sidebar.php'; ?><main class="admin-main"><h1>☁️ Cloudinary & Cloudflare R2</h1><?php if($msg): ?><div class="notice-ok"><?=e($msg)?></div><?php endif; ?><form method="post" class="grid"><div class="card"><h3>Cloudinary — images/vidéos optimisées</h3><label>Cloud name</label><input name="cloudinary_cloud" value="<?=e($c['cloudinary_cloud']??'')?>"><label>API Key</label><input name="cloudinary_key" value="<?=e($c['cloudinary_key']??'')?>"><label>API Secret</label><input name="cloudinary_secret" type="password" value="<?=e($c['cloudinary_secret']??'')?>"><p>À utiliser pour les photos des biens, vidéos légères et optimisation automatique.</p></div><div class="card"><h3>Cloudflare R2 — sauvegardes hors serveur</h3><label>Endpoint S3</label><input name="cloudflare_r2_endpoint" value="<?=e($c['cloudflare_r2_endpoint']??'')?>"><label>Access Key</label><input name="cloudflare_r2_access_key" value="<?=e($c['cloudflare_r2_access_key']??'')?>"><label>Secret Key</label><input name="cloudflare_r2_secret_key" type="password" value="<?=e($c['cloudflare_r2_secret_key']??'')?>"><label>Bucket</label><input name="cloudflare_r2_bucket" value="<?=e($c['cloudflare_r2_bucket']??'')?>"><label>URL publique optionnelle</label><input name="cloudflare_r2_public_url" value="<?=e($c['cloudflare_r2_public_url']??'')?>"><p>Étape suivante : envoi automatique des ZIP de sauvegarde vers R2.</p></div><p style="grid-column:1/-1"><button class="btn btn-gold" type="submit">Enregistrer</button></p></form></main></div></body></html>

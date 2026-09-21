@@ -1,0 +1,91 @@
+/* GEA-H V28 - Dashboards ultra premium */
+:root{
+  --v28-bg:#03070b;
+  --v28-panel:rgba(8,19,31,.78);
+  --v28-panel2:rgba(10,34,28,.72);
+  --v28-gold:#d4a23a;
+  --v28-gold2:#ffe08a;
+  --v28-green:#0abf74;
+  --v28-border:rgba(212,162,58,.24);
+}
+body:has(.v28-dashboard), body.v28-premium{
+  background:
+    radial-gradient(circle at 15% 10%,rgba(212,162,58,.16),transparent 34%),
+    radial-gradient(circle at 80% 12%,rgba(10,191,116,.12),transparent 32%),
+    linear-gradient(135deg,#02050a,#06151b 52%,#03120c)!important;
+}
+.v28-dashboard{
+  padding:4px 0 40px;
+  color:#fff;
+}
+.v28-hero{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--v28-border);
+  border-radius:28px;
+  padding:28px;
+  margin-bottom:22px;
+  background:
+    linear-gradient(135deg,rgba(212,162,58,.13),transparent 32%),
+    linear-gradient(120deg,rgba(8,19,31,.92),rgba(8,35,26,.72));
+  box-shadow:0 24px 80px rgba(0,0,0,.35), inset 0 0 55px rgba(212,162,58,.06);
+}
+.v28-hero:before{
+  content:"";
+  position:absolute; inset:-60%;
+  background:conic-gradient(from 180deg,transparent,rgba(212,162,58,.18),transparent,rgba(10,191,116,.12),transparent);
+  animation:v28Spin 14s linear infinite;
+  opacity:.45;
+}
+.v28-hero>*{position:relative;z-index:2}
+.v28-hero h1{font-size:clamp(30px,4.2vw,62px);margin:0 0 8px;line-height:1;color:#fff;text-shadow:0 0 30px rgba(212,162,58,.28)}
+.v28-hero p{color:#d7e6dd;font-size:17px;max-width:940px}
+.v28-badge{display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border-radius:999px;border:1px solid var(--v28-border);background:rgba(212,162,58,.12);color:var(--v28-gold2);font-weight:900;margin-bottom:12px;text-transform:uppercase;font-size:12px;letter-spacing:.8px}
+.v28-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.v28-card{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:22px;
+  padding:20px;
+  background:linear-gradient(145deg,rgba(12,26,39,.92),rgba(7,18,26,.72));
+  box-shadow:0 18px 60px rgba(0,0,0,.28);
+}
+.v28-card:after{
+  content:"";position:absolute;right:-50px;top:-50px;width:140px;height:140px;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,162,58,.16),transparent 65%);
+}
+.v28-card h3{margin:0 0 8px;color:var(--v28-gold2);font-size:15px;text-transform:uppercase;letter-spacing:.6px}
+.v28-card strong{display:block;font-size:clamp(28px,4vw,46px);color:#fff;line-height:1;margin:4px 0}
+.v28-card span{color:#a9c2b7;font-size:13px}
+.v28-panel{
+  border:1px solid var(--v28-border);
+  border-radius:24px;
+  padding:22px;
+  background:var(--v28-panel);
+  box-shadow:0 18px 60px rgba(0,0,0,.26);
+  margin:18px 0;
+}
+.v28-panel h2{color:#fff;margin:0 0 14px;font-size:24px}
+.v28-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.v28-btn,.v28-panel button,.v28-panel .btn{
+  border:0;
+  border-radius:14px;
+  padding:11px 16px;
+  font-weight:900;
+  cursor:pointer;
+  background:linear-gradient(135deg,var(--v28-gold),#f5c65c);
+  color:#211400!important;
+  box-shadow:0 12px 26px rgba(212,162,58,.22);
+}
+.v28-btn.dark{background:rgba(255,255,255,.08);color:#fff!important;border:1px solid rgba(255,255,255,.12);box-shadow:none}
+.v28-table{width:100%;border-collapse:separate;border-spacing:0 9px}
+.v28-table th{color:#ffe08a;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.7px;padding:8px}
+.v28-table td{background:rgba(255,255,255,.055);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:12px}
+.v28-table td:first-child{border-left:1px solid rgba(255,255,255,.08);border-radius:14px 0 0 14px}
+.v28-table td:last-child{border-right:1px solid rgba(255,255,255,.08);border-radius:0 14px 14px 0}
+.v28-status{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(10,191,116,.16);color:#93ffd0;border:1px solid rgba(10,191,116,.25);font-size:12px;font-weight:900}
+.v28-status.warn{background:rgba(212,162,58,.14);color:#ffe08a;border-color:rgba(212,162,58,.25)}
+.v28-status.bad{background:rgba(220,38,38,.14);color:#fecaca;border-color:rgba(220,38,38,.25)}
+@keyframes v28Spin{to{transform:rotate(360deg)}}
+@media(max-width:720px){.v28-hero{padding:20px}.v28-table{font-size:13px}.v28-table td,.v28-table th{padding:9px}}
